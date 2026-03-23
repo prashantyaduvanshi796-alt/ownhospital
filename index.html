@@ -1,0 +1,288 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Hospital - Modern Healthcare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+<!-- WhatsApp Floating Button -->
+<div class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/1234567890?text=New%20Patient%20Token%20Booked" 
+       target="_blank" 
+       class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-110">
+        <i class="fab fa-whatsapp text-xl"></i>
+    </a>
+</div>
+
+<!-- Header -->
+<header class="gradient-bg text-white py-20 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+            MediCare Hospital
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+            Your trusted partner in health and wellness. Modern healthcare with a human touch.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#doctors" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                Book Appointment
+            </a>
+            <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300">
+                Contact Us
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Doctors Section -->
+<section id="doctors" class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Our Expert Doctors</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Meet our team of highly qualified specialists ready to provide you with the best care.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Doctor 1 -->
+            <div class="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 overflow-hidden glass-effect backdrop-blur-sm">
+                <div class="h-64 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=500&fit=crop&crop=face" 
+                         alt="Dr. Sarah Johnson" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Available Now
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Dr. Sarah Johnson</h3>
+                    <p class="text-blue-600 font-semibold text-lg mb-4">Cardiologist</p>
+                    <p class="text-gray-600 mb-6">Mon-Fri: 9AM - 5PM<br>Sat: 10AM - 2PM</p>
+                    <button onclick="openTokenModal('Dr. Sarah Johnson', 'Cardiologist')" 
+                            class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 px-6 rounded-2xl font-semibold text-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]">
+                        <i class="fas fa-calendar-check mr-2"></i>Get Token
+                    </button>
+                </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 overflow-hidden glass-effect backdrop-blur-sm">
+                <div class="h-64 bg-gradient-to-br from-purple-400 to-purple-600 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop&crop=face" 
+                         alt="Dr. Michael Chen" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Next: 30min
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Dr. Michael Chen</h3>
+                    <p class="text-purple-600 font-semibold text-lg mb-4">Neurologist</p>
+                    <p class="text-gray-600 mb-6">Mon-Sat: 8AM - 4PM</p>
+                    <button onclick="openTokenModal('Dr. Michael Chen', 'Neurologist')" 
+                            class="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white py-4 px-6 rounded-2xl font-semibold text-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]">
+                        <i class="fas fa-calendar-check mr-2"></i>Get Token
+                    </button>
+                </div>
+            </div>
+
+            <!-- Doctor 3 -->
+            <div class="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 overflow-hidden glass-effect backdrop-blur-sm">
+                <div class="h-64 bg-gradient-to-br from-emerald-400 to-emerald-600 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1594824455825-3d2a818c3ee0?w=400&h=500&fit=crop&crop=face" 
+                         alt="Dr. Emily Rodriguez" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Available Now
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Dr. Emily Rodriguez</h3>
+                    <p class="text-emerald-600 font-semibold text-lg mb-4">Pediatrician</p>
+                    <p class="text-gray-600 mb-6">Mon-Fri: 9AM - 6PM<br>Sat: 9AM - 1PM</p>
+                    <button onclick="openTokenModal('Dr. Emily Rodriguez', 'Pediatrician')" 
+                            class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-4 px-6 rounded-2xl font-semibold text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]">
+                        <i class="fas fa-calendar-check mr-2"></i>Get Token
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Token Modal -->
+<div id="tokenModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8 rounded-t-3xl">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 id="doctorNameModal" class="text-2xl font-bold"></h2>
+                    <p id="specializationModal" class="opacity-90"></p>
+                </div>
+                <button onclick="closeTokenModal()" class="text-white hover:text-gray-200 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <div class="p-8" id="tokenForm">
+            <form id="tokenFormSubmit">
+                <div class="mb-8">
+                    <label class="block text-gray-700 font-semibold mb-3 text-lg">Patient Details</label>
+                    <div class="space-y-4">
+                        <div>
+                            <input type="text" id="patientName" placeholder="Full Name" 
+                                   class="w-full p-4 border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:outline-none transition-all duration-300 text-lg" required>
+                        </div>
+                        <div>
+                            <input type="tel" id="patientPhone" placeholder="Phone Number" 
+                                   class="w-full p-4 border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:outline-none transition-all duration-300 text-lg" required>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" 
+                        class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-5 px-8 rounded-2xl font-bold text-xl shadow-xl hover:shadow-2xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-[1.02]">
+                    <i class="fas fa-ticket-alt mr-2"></i>Generate Token
+                </button>
+            </form>
+        </div>
+
+        <!-- Success Message -->
+        <div id="tokenSuccess" class="p-8 hidden">
+            <div class="text-center">
+                <div class="w-24 h-24 bg-green-100 rounded-3xl mx-auto mb-6 flex items-center justify-center">
+                    <i class="fas fa-check text-3xl text-green-500"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">Token Generated!</h3>
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-5xl font-bold px-8 py-6 rounded-3xl mb-8 shadow-2xl">
+                    <span id="tokenNumber">#</span><span id="tokenValue"></span>
+                </div>
+                <p class="text-gray-600 text-lg mb-8">Please show this token number at reception.</p>
+                <div class="flex gap-4">
+                    <button onclick="shareWhatsApp()" 
+                            class="flex-1 bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i>Share on WhatsApp
+                    </button>
+                    <button onclick="closeTokenModal()" 
+                            class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-4 px-6 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                        <i class="fas fa-times mr-2"></i>Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="contact" class="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-16 px-4">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <div>
+            <h3 class="text-3xl font-bold mb-6">MediCare Hospital</h3>
+            <p class="text-gray-400 mb-6">Providing world-class healthcare with compassion and excellence.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-all duration-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+            <ul class="space-y-3 text-gray-400">
+                <li><a href="#doctors" class="hover:text-white transition-colors">Book Appointment</a></li>
+                <li><a href="#" class="hover:text-white transition-colors">Emergency Services</a></li>
+                <li><a href="#" class="hover:text-white transition-colors">Patient Portal</a></li>
+                <li><a href="#" class="hover:text-white transition-colors">Health Packages</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-xl font-bold mb-6">Contact Info</h4>
+            <div class="space-y-3 text-gray-400">
+                <p><i class="fas fa-phone mr-3 text-blue-400"></i>+1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope mr-3 text-blue-400"></i>info@medicare.com</p>
+                <p><i class="fas fa-map-marker-alt mr-3 text-blue-400"></i>123 Health St, Medical City</p>
+            </div>
+        </div>
+    </div>
+    <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 MediCare Hospital. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    let currentDoctor = '';
+
+    function openTokenModal(doctorName, specialization) {
+        currentDoctor = `${doctorName} - ${specialization}`;
+        document.getElementById('doctorNameModal').textContent = doctorName;
+        document.getElementById('specializationModal').textContent = specialization;
+        document.getElementById('tokenModal').classList.remove('hidden');
+        setTimeout(() => {
+            document.querySelector('#tokenModal > div').classList.remove('scale-95', 'opacity-0');
+            document.querySelector('#tokenModal > div').classList.add('scale-100', 'opacity-100');
+        }, 10);
+    }
+
+    function closeTokenModal() {
+        document.querySelector('#tokenModal > div').classList.remove('scale-100', 'opacity-100');
+        document.querySelector('#tokenModal > div').classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            document.getElementById('tokenModal').classList.add('hidden');
+            document.getElementById('tokenForm').classList.remove('hidden');
+            document.getElementById('tokenSuccess').classList.add('hidden');
+            document.getElementById('tokenFormSubmit').reset();
+        }, 300);
+    }
+
+    document.getElementById('tokenFormSubmit').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('patientName').value;
+        const phone = document.getElementById('patientPhone').value;
+        
+        // Generate random token (1-100)
+        const token = Math.floor(Math.random() * 100) + 1;
+        
+        document.getElementById('tokenForm').classList.add('hidden');
+        document.getElementById('tokenSuccess').classList.remove('hidden');
+        document.getElementById('tokenValue').textContent = token.toString().padStart(2, '0');
+        
+        // Scroll to show modal properly on mobile
+        document.getElementById('tokenModal').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    function shareWhatsApp() {
+        const token = document.getElementById('tokenValue').textContent;
+        const message = `New Patient Token Booked!\nDoctor: ${currentDoctor}\nToken Number: #${token}\nPlease show this at reception.`;
+        const phoneNumber = '1234567890'; // Replace with actual WhatsApp number
+        window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    // Close modal on outside click
+    document.getElementById('tokenModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeTokenModal();
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: '
